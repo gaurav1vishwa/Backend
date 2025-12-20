@@ -1,0 +1,11 @@
+// about the cookies
+about the session
+
+
+hum log kuchh bhi data frontend per browser per rakh skte hai and jab bhe app kuchh bie request backednd per karoge wo frentend  pr saved data automaically backed pr chala jaayega 
+
+and the frontend saved data is called cookies 
+
+cookies matlb jo data aapke frontend me save hai 
+
+and all the process jb tak aap log out ni ho use hum ek session kahege 
