@@ -1,0 +1,17 @@
+creating parsar
+
+setting up with ejs 
+install ejs form npm
+
+setup ejs fas a view engine
+
+setting up public static files
+
+
+dynamic routing:
+
+humm log kayi bar routes dekhte hai unme sirf ek he hissa change hota hai jaise ki 
+/author/harhs
+/author/gaurav
+/author/rahul
+/author/gavravfriend
