@@ -10,7 +10,7 @@ const fs = require('node:fs');
     
 // })
 
-// likhe huye me kuchh jasa append karna 
+// likhe huye me kuchh jasa append karna mtlb aur bhe kuchh add kr dena
 
 
 // fs.appendFile("first.txt","mai achha hu aap batao aap kaise ho",function(err){
@@ -30,7 +30,7 @@ const fs = require('node:fs');
 
 // fs.copyFile("new_first.txt","../copy_folder/replace.txt",function(err){
 
-//     // ./ means we are going to create a file inside the folder which is immidate fist and ../ means that secod one
+//     // ./ means we are going to create a file inside the same folder which is immidate fist and ../ means that secod one
 
 //     // here err.mesage show whhat's error ;
 //     if(err) console.error(err.message);
