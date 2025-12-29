@@ -1,31 +1,41 @@
 const express = require('express');
 const app = express();
 
-const cookiesParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const path = require('path');
+const expressSession = require('express-session');
+const flash = require('connect-flash');
+require('dotenv').config();
 
-const db=require('./config/mongoose-connection');
+require('./config/mongoose-connection');
 
-const ownerRoutes=require('./routes/ownerRouter');
-const productRoutes=require('./routes/productRouter');
-const userRoutes=require('./routes/userRouter');
+const indexRoutes = require('./routes/index');
+const ownerRoutes = require('./routes/ownerRouter');
+const productRoutes = require('./routes/productRouter');
+const userRoutes = require('./routes/userRouter');
+
+app.use(
+expressSession({
+  resave: false,
+  saveUninitialized: false,
+  secret: process.env.SESSION_SECRET_KEY,
+})
+);
+app.use(flash());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookiesParser());   
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Set up view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
-app.get('/', (req, res) => {
-    res.send('Welcome to the Home Page!');
-});
-
+app.use('/', indexRoutes);
 app.use('/owners', ownerRoutes);
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
