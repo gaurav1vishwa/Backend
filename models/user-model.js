@@ -18,10 +18,11 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
-    card: {
-        type: Array,
-        default: [],
-    },
+    card: [ {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+      
+    }],
 
     ordders: {
         type: Array,

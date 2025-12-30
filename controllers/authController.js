@@ -8,11 +8,11 @@ const productsModel = require('../models/product-model');
 module.exports.resisterUser = async function (req, res) {
     try {
         let { email, fullname, password } = req.body;
-       let user = await userModel.findOne({ email: email });
-            if (user) {
-                return res.status(400).send("user already exists please login");
-            }
-      
+        let user = await userModel.findOne({ email: email });
+        if (user) {
+            return res.status(400).send("user already exists please login");
+        }
+
 
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(password, salt, async (err, hash) => {
@@ -49,15 +49,15 @@ module.exports.loginUser = async function (req, res) {
         return res.send("email or password is incorrect");
     };
     bcrypt.compare(password, user.password, async function (err, result) {
-        if(result){
-        
-      let token=  generateToken(user);
-      res.cookie("token",token);
-     let products = await productsModel.find();
-res.render('shop', { products });
+        if (result) {
+
+            let token = generateToken(user);
+            res.cookie("token", token);
+            let products = await productsModel.find();
+            res.render('shop', { products, success: "" });
 
         }
-        else{
+        else {
             return res.send("email or password is incorrect");
         }
 
@@ -65,6 +65,6 @@ res.render('shop', { products });
 };
 
 module.exports.logoutUser = function (req, res) {
-    res.clearCookie("token","");
+    res.clearCookie("token", "");
     res.redirect("/");
 };
