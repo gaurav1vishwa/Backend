@@ -1,0 +1,15 @@
+user ka profile dene se pahle ye check karna hota hai ki user hai koun aur ise hum authentication kahte hai 
+
+authorization - to perform soem tasks which are only allowed to be executed by the admin .
+
+
+server ka kya hai ki server her baar bhul jata hai ki aap kon hai to agar aap agli bar koi information mange ge to server punchega ki app kon ho aur ye process bahut jada irritating wali hai 
+
+
+so isiliye hume cookies ki jarurat padti hai 
+
+1. how to se the cookies abd read.
+
+2. how to bcript (fr password encrytption and decryption)
+
+3. what is jwt(json web token) and how to store the data 

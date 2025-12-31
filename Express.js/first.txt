@@ -1,0 +1,14 @@
+introduction to express js 
+express js ek npm package hai 
+
+it is framework=> its gives the flow means you should follow the flow ,,, 
+
+it is manages everything from  receiving the requrets and giving the respons
+
+
+
+                   middlewear 
+
+jb bhe server request accept karta hai ,vaha se routes me pahuchne tak aap request ko beech me rokte ho aur kuch perform karwate ho to vha pr middleware ka kaam aa jata hai 
+
+

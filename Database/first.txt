@@ -1,0 +1,38 @@
+ database => data storage
+
+ Types of DBS => sql , nosql 
+
+ -------------------------------------------------------------------------------------
+
+ terminologies => collecitons, documents, schemas, keys, models 
+
+ -------------------------------------------------------------------------------------
+
+ Database => collecitons => documents
+
+----------------------------------------------------------------------------------------
+CODE                        DATABASE 
+mongoose.connet ->           database crete 
+model create    ->           collecitons
+CREATE code     ->           documents
+
+ -------------------------------------------------------------------------------------
+
+ mongodb installaion
+
+ mongoose ->  ek library hai jo Node.js ko MongoDB se connect karti hai
+
+ mongodb collecitons
+
+ schemas
+
+ model
+
+ crud operations
+
+  -------------------------------------------------------------------------------------
+  crete
+  Read
+  Update
+  Delete
+  
