@@ -9,11 +9,12 @@ router.get('/', function (req, res) {
    res.render('index', { error,loggedin:false });
 });
 
-router.get("/shop",isLoggedin, async function(req,res){
-    let product=await productModel.find();
-    let success=req.flash("success") ;
-    res.render("shop",{product,success});
+router.get("/shop", isLoggedin, async function(req, res){
+    let products = await productModel.find();   // 🔧 FIX
+    let success = req.flash("success");
+    res.render("shop", { products, success });  // 🔧 FIX
 });
+
 
 router.get("/cart",isLoggedin, async function(req,res){
 let user=await userModel.findOne({email:req.user.email}).populate("cart");

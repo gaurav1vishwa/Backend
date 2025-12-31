@@ -1,9 +1,9 @@
 const express = require('express');
 const Router = express.Router();
 const ownerModel = require('../models/owner-model');
+const productModel = require('../models/product-model');
 
-// this check is to node-vnv is set or undifined
-console.log("Owner router loaded, NODE_ENV =", process.env.NODE_ENV);
+
 
 if (process.env.NODE_ENV === "development") {
     Router.post('/create', async (req, res) => {
@@ -37,6 +37,18 @@ Router.get('/', (req, res) => {
 Router.get('/admin', (req, res) => {
  let success=req.flash("success");
   res.render("createproducts", {success});
+});
+
+Router.get('/adminAccess', (req, res) => {
+let success=req.flash("success");
+  res.render("admin", {success});
+});
+
+
+Router.get("/allProducts", async function (req, res) {
+    let products = await productModel.find();
+    let success = req.flash("success");   // 🔧 ADD THIS
+    res.render("shop", { products, success });
 });
 
 

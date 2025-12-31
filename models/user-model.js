@@ -18,13 +18,13 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
-    card: [ {
+    cart: [ {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Product",
       
     }],
 
-    ordders: {
+    orders: {
         type: Array,
         default: [],
     },
